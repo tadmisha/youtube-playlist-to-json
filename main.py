@@ -2,13 +2,14 @@ from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException as NSEE
+from os.path import abspath
 import json
 from time import sleep
 from pprint import pprint as print
 
 def get_info(url):
     try:
-        browser = webdriver.Chrome(r'D:\Programming\Python\Projects\login\chromedriver.exe')
+        browser = webdriver.Chrome(abspath('chromedriver.exe'))
         browser.get(url)
         while True:
             try:
